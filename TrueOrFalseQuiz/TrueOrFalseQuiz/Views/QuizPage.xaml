@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TrueOrFalseQuiz.Views.QuizPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Rotation="0">
+            <Label x:Name="QuestionCountLabel"
+                Text="{Binding TitleText}"
+                d:Text="Вопрос 1 из 10"
+                FontSize="32"
+                Padding="4"
+                BackgroundColor="Black"
+                TextColor="White"
+                VerticalOptions="Start" 
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center" />
+
+            <Frame VerticalOptions="FillAndExpand"
+                   BackgroundColor="AntiqueWhite"
+                   Margin="16, 12, 16, 0"
+                   CornerRadius="20"
+                   BorderColor="BurlyWood">
+                <Label x:Name="FactTextLabel"
+                    Text="{Binding CurrentQuestionText}"  
+                    Margin="10"
+                    HorizontalTextAlignment="Center"
+                    FontSize="24"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            </Frame>
+            
+            <Grid Margin="16" ColumnSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="TrueButton"
+                    Text="Верно"
+                    FontSize="32"
+                    CornerRadius="12"
+                    HeightRequest="80"
+                    BackgroundColor="LightGreen"
+                    Command="{Binding AnsweredTrue}" />
+                
+                <Button x:Name="FalseButton"
+                    Text="Неверно" 
+                    FontSize="32"
+                    CornerRadius="12"
+                    HeightRequest="80"
+                    BackgroundColor="LightPink"
+                    Command="{Binding AnsweredFalse}"
+                    Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

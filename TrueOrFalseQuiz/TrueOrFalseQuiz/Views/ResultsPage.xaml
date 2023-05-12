@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TrueOrFalseQuiz.Views.ResultsPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Результаты"
+                FontSize="60"
+                VerticalOptions="EndAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Твои очки"
+                FontSize="24"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="ScoreText"
+                d:Text="10 из 10"
+                FontSize="24"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Начать заново"           
+                FontSize="20"
+                HeightRequest="60"
+                Clicked="BackToStart" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
